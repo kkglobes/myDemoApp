@@ -1,9 +1,10 @@
-var http = require('http'); //handles http requests
+var express = require('express');
+var app = express();
 
-var myServer = http.createServer(function (request, response) {
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("Hello Node\n");
-}); //create a server
+app.get('/', function(req, res){
+  res.send('Hello Express');
+});
 
-myServer.listen(3000);
-console.log("Go to localhost:3000 on your browser");
+var server = app.listen(3000, function() {
+  console.log('Listening on port %d', server.address().port);
+});
