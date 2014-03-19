@@ -1,45 +1,27 @@
 <!DOCTYPE html>
 <html>
-<% include _templates/page/head.ejs %>
+  <% include _templates/page/head.ejs %>
   <body>
-    <header class="group">
-      <div id="branding">
-        <a href="/"><img src="images/logos/techdelandlogo_wide.svg" alt="<%= title %> logo"></a>
-      </div>
-    </header><!-- header -->
-
-    <section id="hero" class="group hidden-phone"></section><!-- hero -->
+    <% include _templates/page/header.ejs %>
+    <% include _templates/page/hero.ejs %>
     <div class="container">
       <section id="content" class="row-fluid">
         <div id="main" class="span8">
-          <article>
-            <h1>Title</h1>
-            <p>Our next meeting will be <%= meeting.date %>,<br /> <%= meeting.time %></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, placeat hic eum unde quidem omnis officia odio quisquam repellendus rem voluptatum ex error dolorum? Quis, nobis architecto eius dolorem corporis.</p>
-            <section>
-                <div class="socialmediaicons">
-                  <span class="title">join the movement:</span>
-                  <ul class="group">
-                    <% social.forEach(function(item) { %>
-                    <li><a href="<%= item.url %>"><img class="icon" src="<%= item.img %>" alt="icon for <%= item.shortname %>" /></a></li>
-                    <% }); %>
-                  </ul>
-                </div>
-            </section>
-          </article>
+          <% include _templates/articles/speakerslist.ejs %>
+          <% include _templates/articles/whoarewe.ejs %>
+          <% include _templates/articles/getbusy.ejs %>
+          <% include _templates/articles/whoshouldcome.ejs %>
         </div><!-- main -->
 
         <aside class="span4">
-          <article>
-            <h1>Sidebar</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, placeat hic eum unde quidem omnis officia odio quisquam repellendus rem voluptatum ex error dolorum? Quis, nobis architecto eius dolorem corporis.</p>
-          </article>
+          <% include _templates/asides/nextmeeting.ejs %>
+          <% include _templates/asides/mailinglist.ejs %>
+          <% include _templates/asides/parking.ejs %>
         </aside><!-- asides -->
       </section><!-- content -->
     </div><!-- container -->
-    <footer class="group">
-    </footer><!-- footer group -->
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+      <% include _templates/page/footer.ejs %>
+      <% include _templates/page/jsdefaults.ejs %>
+      <% include _templates/page/gacode.ejs %>
   </body>
 </html>
