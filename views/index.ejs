@@ -14,7 +14,18 @@
         <div id="main" class="span8">
           <article>
             <h1>Title</h1>
+            <p>Our next meeting will be <%= meeting.date %>,<br /> <%= meeting.time %></p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, placeat hic eum unde quidem omnis officia odio quisquam repellendus rem voluptatum ex error dolorum? Quis, nobis architecto eius dolorem corporis.</p>
+            <section>
+                <div class="socialmediaicons">
+                  <span class="title">join the movement:</span>
+                  <ul class="group">
+                    <% social.forEach(function(item) { %>
+                    <li><a href="<%= item.url %>"><img class="icon" src="<%= item.img %>" alt="icon for <%= item.shortname %>" /></a></li>
+                    <% }); %>
+                  </ul>
+                </div>
+            </section>
           </article>
         </div><!-- main -->
 

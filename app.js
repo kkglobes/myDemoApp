@@ -8,6 +8,7 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var myData = require('./data.json');
 
 var app = express();
 
@@ -21,6 +22,10 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
+// adding local variables
+app.locals(myData);
+app.locals.meeting.where = app.locals.vendorList[app.locals.meeting.where];
 
 // development only
 if ('development' == app.get('env')) {
