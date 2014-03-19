@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title><%= title + '--' + page_title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<%= seo_description %>">
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400,300,700,900' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <header class="group">
+      <div id="branding">
+        <a href="/"><img src="images/logos/techdelandlogo_wide.svg" alt="<%= title %> logo"></a>
+      </div>
+    </header><!-- header -->
+
+    <section id="hero" class="group hidden-phone"></section><!-- hero -->
+    <div class="container">
+      <section id="content" class="row-fluid">
+        <div id="main" class="span8">
+          <article>
+            <h1>Title</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, placeat hic eum unde quidem omnis officia odio quisquam repellendus rem voluptatum ex error dolorum? Quis, nobis architecto eius dolorem corporis.</p>
+          </article>
+        </div><!-- main -->
+
+        <aside class="span4">
+          <article>
+            <h1>Sidebar</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, placeat hic eum unde quidem omnis officia odio quisquam repellendus rem voluptatum ex error dolorum? Quis, nobis architecto eius dolorem corporis.</p>
+          </article>
+        </aside><!-- asides -->
+      </section><!-- content -->
+    </div><!-- container -->
+    <footer class="group">
+    </footer><!-- footer group -->
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
   </body>
 </html>
